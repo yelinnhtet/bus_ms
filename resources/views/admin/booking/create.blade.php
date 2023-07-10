@@ -63,27 +63,6 @@
                             @enderror
                         </div>
                         <div class="formgroup mt-3">
-                            <table class="table">
-                                @foreach ($buses as $seat)
-                                    @for ($i = 0; $i < $seat->no_of_seat; $i=$i+10)
-                                        <tr>
-                                            <td class="text-center border bg-success">{{ $i+1 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+2 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+3 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+4 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+5 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+6 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+7 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+7 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+8 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+9 }}</td>
-                                            <td class="text-center border bg-success">{{ $i+10 }}</td>
-                                        </tr>
-                                    @endfor
-                                @endforeach
-                            </table>
-                        </div>
-                        <div class="formgroup mt-3">
                             <label for="seat_number">Seat Number</label>
                             <input type="text" name="seat_number" id="seat_number" class="form-control @error('seat_number') is-invalid @enderror" placeholder="Enter Seat Number" value="{{ old('seat_number') }}">
                             @error('seat_number')

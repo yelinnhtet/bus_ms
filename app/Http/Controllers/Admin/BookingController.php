@@ -21,27 +21,25 @@ class BookingController extends Controller
     public function create_validation(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'bus_number' => 'required',
-            'no_of_seat' => 'required',
-            'route_from' => 'required',
-            'route_to' => 'required',
-            'price' => 'required',
+            'booking_number' => 'required',
+            'customer_name' => 'required',
+            'phone_number' => 'required',
             'departure_date' => 'required',
-            'departure_time' => 'required',
-            'arrival_time' => 'required'
+            'bus_number' => 'required',
+            'seat_number' => 'required',
+            'total_amount' => 'required',
+            'booking_date' => 'required'
         ]);
 
         Booking::create([
-            'name'=>$request->name,
-            'bus_number'=>$request->bus_number,
-            'no_of_seat'=>$request->no_of_seat,
-            'route_from'=>$request->route_from,
-            'route_to'=>$request->route_to,
-            'price'=>$request->price,
+            'booking_number'=>$request->booking_number,
+            'customer_name'=>$request->customer_name,
+            'phone_number'=>$request->phone_number,
             'departure_date'=>$request->departure_date,
-            'departure_time'=>$request->departure_time,
-            'arrival_time'=>$request->arrival_time
+            'bus_number'=>$request->bus_number,
+            'seat_number'=>$request->seat_number,
+            'total_amount'=>$request->total_amount,
+            'booking_date'=>$request->booking_date,
         ]);
 
         return redirect()->route('booking-list')->with('success', 'Booking Data have been successfully added!');
@@ -50,33 +48,31 @@ class BookingController extends Controller
     public function edit($id)
     {
         $book_data = Booking::findOrFail($id);
-        return view('admin.booking.edit-booking', compact('book_data'));
+        return view('admin.booking.edit', compact('book_data'));
     }
 
     function edit_validation(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required',
-            'bus_number' => 'required',
-            'no_of_seat' => 'required',
-            'route_from' => 'required',
-            'route_to' => 'required',
-            'price' => 'required',
+            'booking_number' => 'required',
+            'customer_name' => 'required',
+            'phone_number' => 'required',
             'departure_date' => 'required',
-            'departure_time' => 'required',
-            'arrival_time' => 'required'
+            'bus_number' => 'required',
+            'seat_number' => 'required',
+            'total_amount' => 'required',
+            'booking_date' => 'required'
         ]);
 
         Booking::find($id)->update([
-            'name'=>$request->name,
-            'bus_number'=>$request->bus_number,
-            'no_of_seat'=>$request->no_of_seat,
-            'route_from'=>$request->route_from,
-            'route_to'=>$request->route_to,
-            'price'=>$request->price,
+            'booking_number'=>$request->booking_number,
+            'customer_name'=>$request->customer_name,
+            'phone_number'=>$request->phone_number,
             'departure_date'=>$request->departure_date,
-            'departure_time'=>$request->departure_time,
-            'arrival_time'=>$request->arrival_time,
+            'bus_number'=>$request->bus_number,
+            'seat_number'=>$request->seat_number,
+            'total_amount'=>$request->total_amount,
+            'booking_date'=>$request->booking_date,
         ]);
 
         return redirect()->route('booking-list')->with('success', 'Booking Data have been successfully updated');

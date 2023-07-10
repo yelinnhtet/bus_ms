@@ -13,11 +13,11 @@ class Booking extends Model
         'booking_number',
         'customer_name',
         'phone_number',
-        'daparture_date',
+        'departure_date',
         'bus_number',
         'seat_number',
         'total_amount',
-        'booking_date',
+        'booking_date'
     ];
 
     public function buses() {

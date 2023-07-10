@@ -58,12 +58,6 @@
                     <p>Booking List</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-tasks nav-icon"></i>
-                    <p>Seats</p>
-                </a>
-            </li>
             <li class="nav-item {{ $current_route == 'users.index'?'menu-open':'' }}">
                 <a href="#" class="nav-link {{ $current_route == 'users.index'?'active':'' }}">
                     <i class="nav-icon fas fa-users"></i>
